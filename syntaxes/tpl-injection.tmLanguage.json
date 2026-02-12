@@ -1,0 +1,222 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "tpl tagged template injections",
+  "scopeName": "tpl.injection",
+
+  "injectionSelector": "L:source.ts, L:source.tsx, L:source.js, L:source.js.jsx, L:source.jsx",
+
+  "patterns": [
+    { "include": "#tpl_css" },
+    { "include": "#tpl_scss" },
+    { "include": "#tpl_json" },
+    { "include": "#tpl_vue" },
+
+    { "include": "#tpl_ts" },
+    { "include": "#tpl_dts" },
+    { "include": "#tpl_tsx" },
+
+    { "include": "#tpl_js" },
+    { "include": "#tpl_jsx" }
+  ],
+
+  "repository": {
+    "tpl_css": {
+      "name": "meta.embedded.block.css",
+      "begin": "(\\btpl\\s*\\.\\s*css\\s*)(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.tpl.css" },
+        "2": { "name": "punctuation.definition.string.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": { "1": { "name": "punctuation.definition.string.end.js" } },
+      "contentName": "meta.embedded.block.css",
+      "patterns": [
+        { "include": "#tpl_interpolation_ts" },
+        { "include": "source.css" }
+      ]
+    },
+
+    "tpl_scss": {
+      "name": "meta.embedded.block.scss",
+      "begin": "(\\btpl\\s*\\.\\s*scss\\s*)(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.tpl.scss" },
+        "2": { "name": "punctuation.definition.string.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": { "1": { "name": "punctuation.definition.string.end.js" } },
+      "contentName": "meta.embedded.block.scss",
+      "patterns": [
+        { "include": "#tpl_interpolation_ts" },
+        { "include": "source.css.scss" },
+        { "include": "source.scss" }
+      ]
+    },
+
+    "tpl_json": {
+      "name": "meta.embedded.block.json",
+      "begin": "(\\btpl\\s*\\.\\s*json\\s*)(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.tpl.json" },
+        "2": { "name": "punctuation.definition.string.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": { "1": { "name": "punctuation.definition.string.end.js" } },
+      "contentName": "meta.embedded.block.json",
+      "patterns": [
+        { "include": "#tpl_interpolation_ts" },
+        { "include": "source.json" }
+      ]
+    },
+
+    "tpl_vue": {
+      "name": "meta.embedded.block.vue",
+      "begin": "(\\btpl\\s*\\.\\s*vue\\s*)(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.tpl.vue" },
+        "2": { "name": "punctuation.definition.string.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": { "1": { "name": "punctuation.definition.string.end.js" } },
+
+      "contentName": "meta.embedded.block.vue",
+      "patterns": [
+        { "include": "#tpl_interpolation_ts" },
+        { "include": "source.vue" }
+      ]
+    },
+
+    "tpl_ts": {
+      "name": "meta.embedded.block.typescript",
+      "begin": "(\\btpl\\s*\\.\\s*ts\\s*)(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.tpl.ts" },
+        "2": { "name": "punctuation.definition.string.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": { "1": { "name": "punctuation.definition.string.end.js" } },
+      "contentName": "meta.embedded.block.typescript",
+      "patterns": [
+        { "include": "#tpl_interpolation_ts" },
+        { "include": "source.ts" }
+      ]
+    },
+
+    "tpl_dts": {
+      "name": "meta.embedded.block.typescript.dts",
+      "begin": "(\\btpl\\s*\\.\\s*dts\\s*)(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.tpl.dts" },
+        "2": { "name": "punctuation.definition.string.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": { "1": { "name": "punctuation.definition.string.end.js" } },
+      "contentName": "meta.embedded.block.typescript.dts",
+      "patterns": [
+        { "include": "#tpl_interpolation_ts" },
+        { "include": "source.ts" }
+      ]
+    },
+
+    "tpl_tsx": {
+      "name": "meta.embedded.block.typescriptreact",
+      "begin": "(\\btpl\\s*\\.\\s*tsx\\s*)(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.tpl.tsx" },
+        "2": { "name": "punctuation.definition.string.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": { "1": { "name": "punctuation.definition.string.end.js" } },
+      "contentName": "meta.embedded.block.typescriptreact",
+      "patterns": [
+        { "include": "#tpl_interpolation_tsx" },
+        { "include": "source.tsx" }
+      ]
+    },
+
+    "tpl_js": {
+      "name": "meta.embedded.block.javascript",
+      "begin": "(\\btpl\\s*\\.\\s*js\\s*)(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.tpl.js" },
+        "2": { "name": "punctuation.definition.string.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": { "1": { "name": "punctuation.definition.string.end.js" } },
+      "contentName": "meta.embedded.block.javascript",
+      "patterns": [
+        { "include": "#tpl_interpolation_js" },
+        { "include": "source.js" }
+      ]
+    },
+
+    "tpl_jsx": {
+      "name": "meta.embedded.block.javascriptreact",
+      "begin": "(\\btpl\\s*\\.\\s*jsx\\s*)(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.tpl.jsx" },
+        "2": { "name": "punctuation.definition.string.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": { "1": { "name": "punctuation.definition.string.end.js" } },
+      "contentName": "meta.embedded.block.javascriptreact",
+      "patterns": [
+        { "include": "#tpl_interpolation_jsx" },
+        { "include": "source.js.jsx" },
+        { "include": "source.jsx" }
+      ]
+    },
+
+    "tpl_interpolation_ts": {
+      "patterns": [
+        {
+          "name": "meta.interpolation.tpl",
+          "begin": "\\$\\{",
+          "beginCaptures": { "0": { "name": "punctuation.section.embedded.begin.js" } },
+          "end": "\\}",
+          "endCaptures": { "0": { "name": "punctuation.section.embedded.end.js" } },
+          "patterns": [{ "include": "source.ts" }]
+        }
+      ]
+    },
+
+    "tpl_interpolation_tsx": {
+      "patterns": [
+        {
+          "name": "meta.interpolation.tpl",
+          "begin": "\\$\\{",
+          "beginCaptures": { "0": { "name": "punctuation.section.embedded.begin.js" } },
+          "end": "\\}",
+          "endCaptures": { "0": { "name": "punctuation.section.embedded.end.js" } },
+          "patterns": [{ "include": "source.tsx" }]
+        }
+      ]
+    },
+
+    "tpl_interpolation_js": {
+      "patterns": [
+        {
+          "name": "meta.interpolation.tpl",
+          "begin": "\\$\\{",
+          "beginCaptures": { "0": { "name": "punctuation.section.embedded.begin.js" } },
+          "end": "\\}",
+          "endCaptures": { "0": { "name": "punctuation.section.embedded.end.js" } },
+          "patterns": [{ "include": "source.js" }]
+        }
+      ]
+    },
+
+    "tpl_interpolation_jsx": {
+      "patterns": [
+        {
+          "name": "meta.interpolation.tpl",
+          "begin": "\\$\\{",
+          "beginCaptures": { "0": { "name": "punctuation.section.embedded.begin.js" } },
+          "end": "\\}",
+          "endCaptures": { "0": { "name": "punctuation.section.embedded.end.js" } },
+          "patterns": [{ "include": "source.js.jsx" }, { "include": "source.jsx" }]
+        }
+      ]
+    }
+  }
+}
