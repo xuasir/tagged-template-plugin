@@ -2,7 +2,7 @@
   "name": "tpl-template-injection",
   "displayName": "tpl Tagged Template Injection",
   "description": "Syntax highlighting injection for tpl.ts/css/json/vue tagged template literals in TS/JS.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "your-name",
   "scripts": {
     "debug": "mkdir -p .vscode-dev && code \"$PWD\" --extensionDevelopmentPath=\"$PWD\" --user-data-dir \"$PWD/.vscode-dev\" --new-window",
@@ -14,14 +14,24 @@
   "engines": {
     "vscode": "^1.80.0"
   },
-  "extensionDependencies": ["Vue.volar"],
-  "categories": ["Programming Languages"],
+  "extensionDependencies": [
+    "Vue.volar"
+  ],
+  "categories": [
+    "Programming Languages"
+  ],
   "contributes": {
     "grammars": [
       {
         "scopeName": "tpl.injection",
         "path": "./syntaxes/tpl-injection.tmLanguage.json",
-        "injectTo": ["source.ts", "source.tsx", "source.js", "source.js.jsx", "source.jsx"],
+        "injectTo": [
+          "source.ts",
+          "source.tsx",
+          "source.js",
+          "source.js.jsx",
+          "source.jsx"
+        ],
         "embeddedLanguages": {
           "meta.embedded.block.html": "html",
           "meta.embedded.block.css": "css",
