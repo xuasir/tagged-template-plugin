@@ -2,7 +2,7 @@
   "name": "tpl-template-injection",
   "displayName": "tpl Tagged Template Injection",
   "description": "Syntax highlighting injection for tpl.ts/css/json/vue tagged template literals in TS/JS.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "your-name",
   "scripts": {
     "debug": "mkdir -p .vscode-dev && code \"$PWD\" --extensionDevelopmentPath=\"$PWD\" --user-data-dir \"$PWD/.vscode-dev\" --new-window",
