@@ -1,0 +1,9 @@
+.git/**
+.vscode/**
+.vscode-dev/**
+dist/**
+node_modules/**
+plan.md
+test.ts
+pnpm-lock.yaml
+.gitignore

@@ -2,8 +2,21 @@
   "name": "tpl-template-injection",
   "displayName": "tpl Tagged Template Injection",
   "description": "Syntax highlighting injection for tpl.ts/css/json/vue tagged template literals in TS/JS.",
-  "version": "0.0.3",
-  "publisher": "your-name",
+  "version": "0.0.4",
+  "publisher": "vona-js",
+  "author": {
+    "name": "vona-js"
+  },
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "homepage": "https://github.com/xuasir/tagged-template-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xuasir/tagged-template-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xuasir/tagged-template-plugin/issues"
+  },
   "scripts": {
     "debug": "mkdir -p .vscode-dev && code \"$PWD\" --extensionDevelopmentPath=\"$PWD\" --user-data-dir \"$PWD/.vscode-dev\" --new-window",
     "package": "mkdir -p dist && pnpm dlx @vscode/vsce package --out dist/tpl-template-injection.vsix",
