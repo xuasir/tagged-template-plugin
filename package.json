@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "publisher": "your-name",
   "scripts": {
-    "debug": "mkdir -p .vscode-dev && code . --extensionDevelopmentPath=. --user-data-dir ./.vscode-dev --new-window",
+    "debug": "mkdir -p .vscode-dev && code \"$PWD\" --extensionDevelopmentPath=\"$PWD\" --user-data-dir \"$PWD/.vscode-dev\" --new-window",
     "package": "mkdir -p dist && pnpm dlx @vscode/vsce package --out dist/tpl-template-injection.vsix",
     "publish:patch": "pnpm dlx @vscode/vsce publish patch",
     "publish:minor": "pnpm dlx @vscode/vsce publish minor",
@@ -14,6 +14,7 @@
   "engines": {
     "vscode": "^1.80.0"
   },
+  "extensionDependencies": ["Vue.volar"],
   "categories": ["Programming Languages"],
   "contributes": {
     "grammars": [
@@ -22,6 +23,7 @@
         "path": "./syntaxes/tpl-injection.tmLanguage.json",
         "injectTo": ["source.ts", "source.tsx", "source.js", "source.js.jsx", "source.jsx"],
         "embeddedLanguages": {
+          "meta.embedded.block.html": "html",
           "meta.embedded.block.css": "css",
           "meta.embedded.block.scss": "scss",
           "meta.embedded.block.json": "json",
@@ -33,6 +35,7 @@
           "meta.embedded.block.javascriptreact": "javascriptreact"
         },
         "tokenTypes": {
+          "meta.embedded.block.html": "other",
           "meta.embedded.block.css": "other",
           "meta.embedded.block.scss": "other",
           "meta.embedded.block.json": "other",

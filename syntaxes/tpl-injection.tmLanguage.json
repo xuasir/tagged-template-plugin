@@ -82,7 +82,9 @@
       "contentName": "meta.embedded.block.vue",
       "patterns": [
         { "include": "#tpl_interpolation_ts" },
-        { "include": "source.vue" }
+        { "include": "text.html.vue" },
+        { "include": "source.vue" },
+        { "include": "text.html.basic" }
       ]
     },
 

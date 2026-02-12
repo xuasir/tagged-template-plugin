@@ -4,10 +4,12 @@ Adds syntax highlighting inside tagged template literals:
 
 - `tpl.css\`...\`` -> CSS
 - `tpl.json\`...\`` -> JSON
-- `tpl.vue\`...\`` -> Vue (depends on Vue extension grammar scope)
+- `tpl.vue\`...\`` -> Vue (powered by Volar grammar)
 - `tpl.ts\`...\`` -> TypeScript
 
 Interpolation `${ ... }` is highlighted as TypeScript.
+
+`tpl.vue` relies on `Vue - Official` (Volar) grammar scope in VS Code.
 
 ## Dev
 
